@@ -1,7 +1,8 @@
 require('dotenv').config();
 var express = require('express');
 var router = express.Router();
-var queries = require('./queries/apiQueries') var auth = require('./helpers.js');
+var queries = require('../queries/apiQueries');
+var auth = require('./helpers.js');
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 
