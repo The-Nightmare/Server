@@ -7,14 +7,14 @@ var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 
 router.post('/signup', function(req, res, next){
-  queries.findUserByUserName(req.query.userName)
+  queries.findUserByUserName(req.body.userName)
   .then(function(user){
     if(user){
       res.json({
         error : "user already exist try another name"
       });
     }else {
-      auth.createUser(req.query)
+      auth.createUser(req.body)
       .then(function(user){
         res.json({
           message : 'you are a new user yay'
@@ -25,9 +25,9 @@ router.post('/signup', function(req, res, next){
 });
 
 router.post('/login', function(req, res, next){
-  queries.findUserByUserName(req.query.userName)
+  queries.findUserByUserName(req.body.userName)
   .then(function(user){
-    var plainTextPassword = req.query.password;
+    var plainTextPassword = req.body.password;
     if(user && bcrypt.compareSync(plainTextPassword, user.password)){
       jwt.sign(user, process.env.TOKEN_SECRET, {expiresIn: '1d'}, function(err, token){
         if(err){
