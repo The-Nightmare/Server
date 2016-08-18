@@ -6,5 +6,11 @@ module.exports ={
   },
   addUser : function(body){
     return knex('users').insert(body);
-  }
-}
+  },
+  getData : function(){
+  return knex('users');
+},
+addScore : function(userName, highScore){
+  return knex('users').insert({'userName': userName, 'highScore':highScore});
+  },
+};

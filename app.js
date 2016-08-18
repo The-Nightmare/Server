@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 var helpers = require('./auth/helpers');
 var cors = require('cors')
 
+var add = require('./add/index');
+
+
 var api = require('./api/index');
 var auth = require('./auth/index');
 
@@ -22,6 +25,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(cors());
+
+app.use('/add', add);
 
 app.use(helpers.authMiddleWare);
 app.use('/auth', auth);
