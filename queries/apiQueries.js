@@ -13,4 +13,7 @@ module.exports ={
 addScore : function(userName, highScore){
   return knex('users').insert({'userName': userName, 'highScore':highScore});
   },
+  getOneData : function(id){
+  return knex('users').where({id: id});
+},
 };

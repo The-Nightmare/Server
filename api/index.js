@@ -10,17 +10,12 @@ router.get('/', function(req, res, next){
       res.json({score: data });
   });
 });
-//add highscore data
-// router.post('/', function(req, res, next){
-//   console.log(req);
-//   queries.addScore(req.params.userName, req.params.highscore)
-//   .then(function(data){
-//     console.log(data);
-//       res.json({message: data});
-//   });
-// });
-router.post('/', function(req, res, next){
-  console.log(req);
+router.get('/:id', function(req, res, next){
+  queries.getOneData(req.params.id)
+  .then(function(data){
+    console.log(data);
+      res.json({user: data});
+  });
 });
 
 module.exports = router;
