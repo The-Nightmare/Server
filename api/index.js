@@ -6,14 +6,12 @@ var queries = require('../queries/apiQueries');
 router.get('/', function(req, res, next){
   queries.getData()
   .then(function(data){
-    console.log(data);
       res.json({score: data });
   });
 });
 router.get('/:id', function(req, res, next){
   queries.getOneData(req.params.id)
   .then(function(data){
-    console.log(data);
       res.json({user: data});
   });
 });

@@ -7,7 +7,6 @@ var queries = require('../queries/apiQueries');
 router.post('/', function(req, res, next){
   queries.addScore(req.body.userName, req.body.highScore)
   .then(function(data){
-    console.log(data.body);
       res.json({message: data.body});
   });
 });
