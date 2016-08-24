@@ -25,11 +25,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(cors());
-
-app.use('/add', add);
-
 app.use(helpers.authMiddleWare);
 app.use('/auth', auth);
+app.use('/add', add);
 app.use('/api', helpers.ensureauthenticated, api);
 
 
