@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helpers = require('./auth/helpers');
-var cors = require('cors')
+var cors = require('cors');
 
 var add = require('./add/index');
 
