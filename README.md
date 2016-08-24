@@ -11,7 +11,7 @@ The game is a decoupled app and uses Angularjs, Materialize, Blender, Unity (wri
 3. add dotenv file:
 `touch .env`
 4. inside your .env file add your database url and token secret formatted as this example:
-`TOKEN_SECRET=sjdkfbauygiawhiefgauhfgbaksjdhf
-DATABASE_URL=postgres://udiljrkzkyccsy:StxICDesI1ob6RO7uWm8W4lMxD@ec2-50-17-214-132.compute-1.amazonaws.com:5432/dcb2psfrdtfavf
+`TOKEN_SECRET=sjdkfbauygiawhiefgauhfgbaksjdhf`
+`DATABASE_URL=postgres://udiljrkzkyccsy:StxICDesI1ob6RO7uWm8W4lMxD@ec2-50-17-214-132.compute-1.amazonaws.com:5432/dcb2psfrdtfavf
 `
 then run locally via nodemon command for example.
